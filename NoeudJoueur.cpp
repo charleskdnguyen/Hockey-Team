@@ -18,9 +18,13 @@ NoeudJoueur::~NoeudJoueur()
 	//Destructeur
 }
 
-//const NoeudJoueur& NoeudJoueur::operator=(const NoeudJoueur& noeud) {
-//
-//}
+const NoeudJoueur& NoeudJoueur::operator=(const NoeudJoueur& noeud) {
+	//A FAIRE
+
+	this->setJoueur(noeud.getJoueur());
+	this->setSuivant(noeud.getSuivant());
+	return *this;
+}
 
 void NoeudJoueur::setJoueur(const Joueur& joueur)
 {

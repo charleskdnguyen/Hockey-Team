@@ -14,7 +14,13 @@ ListeEquipe::~ListeEquipe() {
 }
 
 const ListeEquipe& ListeEquipe::operator=(const ListeEquipe& lj) {
-	//this->lesEquipes = lj;
+	/*this->lesEquipes = lj.lesEquipes;*/
+	
+	int taille = lj.getTaille();
+	for (int i = 0; i < taille; i++)
+	{
+		lesEquipes->getListeJoueurs().obtenirCurseurElement();
+	}
 	return *this;
 }
 
@@ -22,24 +28,22 @@ void ListeEquipe::insererFin(const Equipe& equipe) {
 	if (taille == maximum) {
 		doublerMaximum();
 	}
-
-	lesEquipes[taille++] = equipe;
+	lesEquipes[taille] = equipe;
+	taille++;
 }
 
-//const Equipe& ListeEquipe::obtenirEquipe(int indice) const {
-//	return lesEquipes[indice];
-//}
+const Equipe& ListeEquipe::obtenirEquipe(int indice) const {
+	return lesEquipes[indice];
+}
 
 Equipe& ListeEquipe::obtenirEquipe(int indice) {
 	return lesEquipes[indice];
 }
 
-//DONE
 int ListeEquipe::getTaille() const {
 	return taille;
 }
 
-//DONE
 void ListeEquipe::doublerMaximum() {
 	maximum = maximum * 2;
 	Equipe *tmp = new Equipe[maximum];

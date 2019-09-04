@@ -7,8 +7,10 @@ Joueur::Joueur(const string& nom, float salaire) {
 	this->salaire = salaire;
 }
 Joueur::Joueur(const Joueur& j) {
-	nom = j.nom;
-	salaire = j.salaire;
+	//this->nom = j.nom;
+	//this->salaire = j.salaire;
+	setNom(j.nom);
+	setSalaire(j.salaire);
 }
 Joueur::~Joueur() {
 
@@ -32,3 +34,4 @@ void Joueur::setNom(const string& nom) {
 void Joueur::setSalaire(float salaire) {
 	this->salaire = salaire;
 }
+
